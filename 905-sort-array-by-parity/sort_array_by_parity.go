@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 /*
 Given an array A of non-negative integers,
 return an array consisting of all the even elements of A,
@@ -18,7 +20,26 @@ Note:
 */
 
 func sortArrayByParity(A []int) []int {
+	for i, j := 0, len(A)-1; i < j; {
+		if A[i]%2 == 1 && A[j]%2 == 0 {
+			A[i], A[j] = A[j], A[i]
+			i++
+			j--
+		} else if A[j]%2 == 1 {
+			j--
+		} else if A[i]%2 == 0 {
+			i++
+		}
+	}
 
+	return A
 }
 
-func main() {}
+func main() {
+	A := []int{3, 1, 2, 4}
+	fmt.Println(sortArrayByParity(A))
+	A = []int{0, 1, 2}
+	fmt.Println(sortArrayByParity(A))
+	A = []int{1, 0, 3}
+	fmt.Println(sortArrayByParity(A))
+}
