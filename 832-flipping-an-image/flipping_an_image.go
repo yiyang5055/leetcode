@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 /*
 Given a binary matrix A, we want to flip the image horizontally,
 then invert it, and return the resulting image.
@@ -29,7 +31,21 @@ Notes:
 */
 
 func flipAndInvertImage(A [][]int) [][]int {
+	for _, row := range A {
+		for i, j := 0, len(row)-1; i <= j; i, j = i+1, j-1 {
+			row[i], row[j] = row[j]^1, row[i]^1
+		}
+	}
 
+	return A
 }
 
-func main() {}
+func main() {
+	A := [][]int{
+		{1, 1, 0},
+		{1, 0, 1},
+		{0, 0, 0},
+	}
+
+	fmt.Println(flipAndInvertImage(A))
+}
