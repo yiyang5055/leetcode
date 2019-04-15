@@ -4,6 +4,7 @@
     <img src="https://img.shields.io/badge/Medium-21-blue.svg?style=flat-square" alt="">
     <img src="https://img.shields.io/badge/Easy-35-blue.svg?style=flat-square" alt="">
 </p>
+
 | #  | Title | Solution  | Difficulty | Acceptance
 |:--:|:-----:|:---------:|:----:|:----:|
 | 1 | [Two Sum](./1-two-sum/README.md) |  python  | Easy | 43.22% |
