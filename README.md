@@ -19,11 +19,11 @@
 | 13 | [Roman to Integer](./13-roman-to-integer/README.md) |  python  | Easy | 52.00% |
 | 14 | [Longest Common Prefix](./14-longest-common-prefix/README.md) |  python  | Easy | 33.27% |
 | 15 | [3Sum](./15-3sum/README.md) |  python  | Medium | 23.75% |
-| 16 | [3Sum Closest](./16-3sum-closest/README.md) |  python  | Medium | 43.48% |
+| 16 | [3Sum Closest](./16-3sum-closest/README.md) |  python  | Medium | 43.49% |
 | 19 | [Remove Nth Node From End of List](./19-remove-nth-node-from-end-of-list/README.md) |  python  | Medium | 34.13% |
 | 20 | [Valid Parentheses](./20-valid-parentheses/README.md) |  python  | Easy | 36.24% |
 | 21 | [Merge Two Sorted Lists](./21-merge-two-sorted-lists/README.md) |  golang  python  | Easy | 46.62% |
-| 23 | [Merge k Sorted Lists](./23-merge-k-sorted-lists/README.md) |  python  | Hard | 33.81% |
+| 23 | [Merge k Sorted Lists](./23-merge-k-sorted-lists/README.md) |  golang  python  | Hard | 33.81% |
 | 26 | [Remove Duplicates from Sorted Array](./26-remove-duplicates-from-sorted-array/README.md) |  golang  python  | Easy | 40.23% |
 | 27 | [Remove Element](./27-remove-element/README.md) |  python  | Easy | 44.12% |
 | 53 | [Maximum Subarray](./53-maximum-subarray/README.md) |  golang  | Easy | 43.25% |
@@ -45,13 +45,13 @@
 | 120 | [Triangle](./120-triangle/README.md) |  golang  | Medium | 38.86% |
 | 144 | [Binary Tree Preorder Traversal](./144-binary-tree-preorder-traversal/README.md) |  python  | Medium | 50.86% |
 | 145 | [Binary Tree Postorder Traversal](./145-binary-tree-postorder-traversal/README.md) |  python  | Hard | 47.77% |
-| 191 | [Number of 1 Bits](./191-number-of-1-bits/README.md) |  python  | Easy | 42.63% |
+| 191 | [Number of 1 Bits](./191-number-of-1-bits/README.md) |  python  | Easy | 42.64% |
 | 206 | [Reverse Linked List](./206-reverse-linked-list/README.md) |  python  | Easy | 53.83% |
 | 226 | [Invert Binary Tree](./226-invert-binary-tree/README.md) |  golang  python  | Easy | 57.67% |
 | 230 | [Kth Smallest Element in a BST](./230-kth-smallest-element-in-a-bst/README.md) |  python  | Medium | 50.72% |
 | 257 | [Binary Tree Paths](./257-binary-tree-paths/README.md) |  python  | Easy | 45.52% |
-| 300 | [Longest Increasing Subsequence](./300-longest-increasing-subsequence/README.md) |  python  | Medium | 40.51% |
-| 338 | [Counting Bits](./338-counting-bits/README.md) |  python  | Medium | 64.36% |
+| 300 | [Longest Increasing Subsequence](./300-longest-increasing-subsequence/README.md) |  python  | Medium | 40.52% |
+| 338 | [Counting Bits](./338-counting-bits/README.md) |  python  | Medium | 64.35% |
 | 404 | [Sum of Left Leaves](./404-sum-of-left-leaves/README.md) |  python  | Easy | 48.87% |
 | 437 | [Path Sum III](./437-path-sum-iii/README.md) |  python  | Easy | 42.39% |
 | 461 | [Hamming Distance](./461-hamming-distance/README.md) |  python  | Easy | 70.18% |
@@ -63,6 +63,6 @@
 | 822 | [Unique Morse Code Words](./822-unique-morse-code-words/README.md) |  golang  | Easy | 74.49% |
 | 861 | [Flipping an Image](./861-flipping-an-image/README.md) |  golang  | Easy | 72.08% |
 | 941 | [Sort Array By Parity](./941-sort-array-by-parity/README.md) |  golang  | Easy | 72.49% |
-| 965 | [Unique Email Addresses](./965-unique-email-addresses/README.md) |  golang  | Easy | 73.33% |
-| 1001 | [N-Repeated Element in Size 2N Array](./1001-n-repeated-element-in-size-2n-array/README.md) |  golang  | Easy | 72.86% |
-| 1019 | [Squares of a Sorted Array](./1019-squares-of-a-sorted-array/README.md) |  golang  | Easy | 72.38% |
+| 965 | [Unique Email Addresses](./965-unique-email-addresses/README.md) |  golang  | Easy | 73.32% |
+| 1001 | [N-Repeated Element in Size 2N Array](./1001-n-repeated-element-in-size-2n-array/README.md) |  golang  | Easy | 72.85% |
+| 1019 | [Squares of a Sorted Array](./1019-squares-of-a-sorted-array/README.md) |  golang  | Easy | 72.39% |
