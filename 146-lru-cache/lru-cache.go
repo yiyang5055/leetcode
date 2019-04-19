@@ -2,10 +2,12 @@ type ListNode struct {
 	Key  int
 	Val  int
 	Next *ListNode
+	Pre  *ListNode
 }
 
 type LRUCache struct {
 	Head *ListNode
+	Tail *ListNode
 	Cap  int
 	Len  int
 }
@@ -13,32 +15,24 @@ type LRUCache struct {
 func Constructor(capacity int) LRUCache {
 	return LRUCache{
 		Head: nil,
+		Tail: nil,
 		Cap:  capacity,
 		Len:  0,
 	}
 }
 
 func (cache *LRUCache) Get(key int) int {
-	if cache.Len < 0 {
+	currentNode := cache.findNode(key)
+	if currentNode == nil {
 		return -1
 	}
 
-	preNode, currentNode := cache.findNode(key)
-	if currentNode != nil {
-		// preNode为nil 说明只有一个节点
-		if preNode != nil {
-			preNode.Next = currentNode.Next
-			currentNode.Next = cache.Head
-			cache.Head = currentNode
-		}
-
-		return cache.Head.Val
-	}
-	return -1
+	cache.moveToFirst(currentNode)
+	return currentNode.Val
 }
 
 func (cache *LRUCache) Put(key int, value int) {
-	preNode, currentNode := cache.findNode(key)
+	currentNode := cache.findNode(key)
 	if currentNode == nil {
 		if cache.Cap == cache.Len {
 			cache.removeLast()
@@ -48,47 +42,63 @@ func (cache *LRUCache) Put(key int, value int) {
 			Key:  key,
 			Val:  value,
 			Next: nil,
+			Pre:  nil,
+		}
+		if cache.Head == nil {
+			cache.Tail = currentNode
+		} else {
+			cache.Head.Pre = currentNode
 		}
 		currentNode.Next = cache.Head
 		cache.Head = currentNode
 		cache.Len += 1
 	} else {
 		currentNode.Val = value
-		if preNode != nil {
-			preNode.Next = currentNode.Next
-			currentNode.Next = cache.Head
-			cache.Head = currentNode
-		}
+		cache.moveToFirst(currentNode)
 	}
 }
 
-func (cache *LRUCache) findNode(key int) (*ListNode, *ListNode) {
-	preNode := (*ListNode)(nil)
-	currentNode := cache.Head
-	for currentNode != nil {
-		if currentNode.Key == key {
-			return preNode, currentNode
+func (cache *LRUCache) moveToFirst(node *ListNode) {
+	//node.PrePre为nil 说明是第一个节点,不需要移动
+	if node.Pre != nil {
+		node.Pre.Next = node.Next
+		//最后一个节点的前去不需要设置
+		if node.Next != nil {
+			node.Next.Pre = node.Pre
+		} else {
+			cache.Tail = cache.Tail.Pre
 		}
-		preNode = currentNode
-		currentNode = currentNode.Next
+		node.Next = cache.Head
+		node.Pre = nil
+		cache.Head.Pre = node
+		cache.Head = node
 	}
-	return nil, nil
+}
+
+func (cache *LRUCache) findNode(key int) *ListNode {
+	for head := cache.Head; head != nil; head = head.Next {
+		if head.Key == key {
+			return head
+		}
+	}
+
+	return nil
 }
 
 func (cache *LRUCache) removeLast() {
-	if cache.Len < 2 {
-		cache.Head = nil
-		cache.Len -= 1
+	if cache.Tail == nil {
 		return
 	}
 
-	preNode := cache.Head
-	behindNode := preNode.Next
-	for behindNode.Next != nil {
-		preNode = behindNode
-		behindNode = behindNode.Next
+	// 无前驱，第一个节点
+	if cache.Tail.Pre == nil {
+		cache.Head = nil
+		cache.Tail = nil
+	} else {
+		cache.Tail = cache.Tail.Pre
+		cache.Tail.Next.Pre = nil
+		cache.Tail.Next = nil
 	}
-	preNode.Next = nil
+
 	cache.Len -= 1
-	return
 }
