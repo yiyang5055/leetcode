@@ -6,9 +6,9 @@
  * https://leetcode.com/problems/reverse-linked-list/description/
  *
  * algorithms
- * Easy (53.85%)
- * Total Accepted:    557.1K
- * Total Submissions: 1M
+ * Easy (53.90%)
+ * Total Accepted:    579.3K
+ * Total Submissions: 1.1M
  * Testcase Example:  '[1,2,3,4,5]'
  *
  * Reverse a singly linked list.
@@ -33,23 +33,17 @@
  *     Next *ListNode
  * }
  */
-
-//2->1->3->4->5
-
 func reverseList(head *ListNode) *ListNode {
 	if head == nil {
 		return nil
 	}
 
-	resHead := head
-	tail := head
-	for tail.Next != nil {
-		currentNode := resHead
-		resHead = tail.Next
-		tail.Next = resHead.Next
-		resHead.Next = currentNode
-
+	dummy := &ListNode{}
+	for head != nil {
+		t := head
+		head = head.Next
+		t.Next = dummy.Next
+		dummy.Next = t
 	}
-
-	return resHead
+	return dummy.Next
 }
